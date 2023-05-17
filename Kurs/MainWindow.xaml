@@ -7,8 +7,8 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Center" Margin="0,145,0,0" VerticalAlignment="Top"/>
-        <Label Content="Скоро здесь появится БД" HorizontalAlignment="Left" Margin="134,237,0,0" VerticalAlignment="Top" Height="28" Width="152"/>
+        <Label Content="Скоро здесь появится БД" HorizontalAlignment="Left" Margin="10,357,0,0" VerticalAlignment="Top" Height="28" Width="152"/>
+        <Button x:Name="btn_perex" Content="Button" HorizontalAlignment="Left" Margin="368,202,0,0" VerticalAlignment="Top" Click="btn_perex_Click"/>
 
     </Grid>
 </Window>

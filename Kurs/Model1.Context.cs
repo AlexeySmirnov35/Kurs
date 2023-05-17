@@ -10,11 +10,13 @@
 namespace Kurs
 {
     using System;
+    using System.Collections;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
     public partial class ZooBdEntities1 : DbContext
     {
+        private static ZooBdEntities1 _context;
         public ZooBdEntities1()
             : base("name=ZooBdEntities1")
         {
@@ -24,7 +26,14 @@ namespace Kurs
         {
             throw new UnintentionalCodeFirstException();
         }
-    
+
+        internal static ZooBdEntities1 GetContext()
+        {
+            if (_context == null)
+                _context = new ZooBdEntities1();
+            return _context;
+        }
+
         public virtual DbSet<Client> Client { get; set; }
         public virtual DbSet<DetailsOrder> DetailsOrder { get; set; }
         public virtual DbSet<Order> Order { get; set; }

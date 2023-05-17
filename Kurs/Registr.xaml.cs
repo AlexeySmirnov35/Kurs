@@ -1,5 +1,4 @@
-﻿using Kurs.AppData;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,27 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Kurs
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для Registr.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Registr : Window
     {
-        public MainWindow()
+        public Registr()
         {
             InitializeComponent();
-            
-        }
-
-        private void btn_perex_Click(object sender, RoutedEventArgs e)
-        {
-            AddProduct addProduct = new AddProduct();
-            addProduct.Show();
-            this.Close();
         }
     }
 }

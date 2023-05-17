@@ -11,26 +11,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Kurs
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для AddProduct.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AddProduct : Window
     {
-        public MainWindow()
+        public AddProduct()
         {
             InitializeComponent();
-            
+            AppConnect.zooBd = new ZooBdEntities1();
+            listview.ItemsSource = ZooBdEntities1.GetContext().Product.ToList();
         }
 
         private void btn_perex_Click(object sender, RoutedEventArgs e)
         {
-            AddProduct addProduct = new AddProduct();
-            addProduct.Show();
+            MainWindow mainWindow= new MainWindow();
+            mainWindow.Show();
             this.Close();
         }
     }

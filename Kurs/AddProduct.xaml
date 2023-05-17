@@ -1,0 +1,32 @@
+﻿<Window x:Class="Kurs.AddProduct"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Kurs"
+        mc:Ignorable="d"
+        Title="AddProduct" Height="900" Width="1200">
+    <Grid Width="1200" Height="1200">
+        <ListView x:Name="listview" Height="392" Margin="0,10,0,0" Width="1168" d:ItemsSource="{d:SampleData ItemCount=5}" Background="White" OpacityMask="#FFFBF7F7" Foreground="#FF101623" BorderBrush="#FF111211" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontFamily="Comic Sans MS" >
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Наименование" DisplayMemberBinding="{Binding NameProduct}"/>
+                    <GridViewColumn Header="Доступно в наличии" DisplayMemberBinding="{Binding Count}" />
+                    <GridViewColumn Header="Цена" DisplayMemberBinding="{Binding PriceProd}"/>
+                    <GridViewColumn Header="Описание" DisplayMemberBinding="{Binding Description}"/>
+                    <GridViewColumn Header="Вид животного" DisplayMemberBinding="{Binding Id_TypeAnim}"/>
+                    <GridViewColumn Header="Производитель" DisplayMemberBinding="{Binding Id_Provid}"/>
+                    <GridViewColumn Header="Фото товара">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding PhotoProduct}" Width="200" Height="200"/>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <Button x:Name="btn_perex" Content="Button" HorizontalAlignment="Left" Margin="405,429,0,0" VerticalAlignment="Top" Click="btn_perex_Click"/>
+
+    </Grid>
+</Window>
