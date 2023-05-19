@@ -7,6 +7,20 @@
         mc:Ignorable="d"
         Title="Registr" Height="450" Width="800">
     <Grid>
-        
+        <Label Content="Фамилия" HorizontalAlignment="Left" Margin="15,75,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.197,-0.587" FontSize="24"/>
+        <TextBox HorizontalAlignment="Left" Margin="15,40,0,0" TextWrapping="Wrap" x:Name="tbName" VerticalAlignment="Top" Width="282" FontSize="24"/>
+        <Label Content="Имя" HorizontalAlignment="Left" Margin="15,-2,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.197,-0.587" FontSize="24"/>
+        <PasswordBox x:Name="tbPhone" HorizontalAlignment="Left" Margin="15,200,0,0" VerticalAlignment="Top" Width="282" FontSize="24"/>
+        <Label Content="Номер телефона" HorizontalAlignment="Left" Margin="15,153,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.197,-0.587" FontSize="24"/>
+        <Button Content="Создать" x:Name="BtnSave" Click="Btn_save" IsEnabled="False" HorizontalAlignment="Left" Margin="26,313,0,0" VerticalAlignment="Top" Height="50" Width="131" FontSize="24"/>
+        <PasswordBox x:Name="tbPass" HorizontalAlignment="Left" Margin="314,117,0,0" VerticalAlignment="Top" Width="282" FontSize="24"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="314,75,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.197,-0.587" FontSize="24"/>
+        <TextBox HorizontalAlignment="Left" Margin="314,40,0,0" TextWrapping="Wrap" x:Name="tbLogin" TextChanged="EmailCor" VerticalAlignment="Top" Width="282" FontSize="24"/>
+        <Label Content="Email" HorizontalAlignment="Left" Margin="314,-2,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.197,-0.587" FontSize="24"/>
+        <PasswordBox x:Name="Pascop" PasswordChanged="PasswordChanged" HorizontalAlignment="Left" Margin="314,200,0,0"  VerticalAlignment="Top" Width="282" FontSize="24"/>
+        <Label Content="Повторите пароль" HorizontalAlignment="Left" Margin="314,153,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.197,-0.587" FontSize="24"/>
+        <DatePicker x:Name="ddata" HorizontalAlignment="Left" Margin="16,255,0,0" VerticalAlignment="Top" Height="58" Width="282" FontSize="24"/>
+        <TextBox HorizontalAlignment="Left" Margin="16,117,0,0" TextWrapping="Wrap" x:Name="tbLast" VerticalAlignment="Top" Width="282" FontSize="24"/>
+        <Label Content="" x:Name="lb" HorizontalAlignment="Left" Margin="627,40,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

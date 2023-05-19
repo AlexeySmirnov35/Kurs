@@ -10,7 +10,6 @@
 namespace Kurs
 {
     using System;
-    using System.Collections;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
@@ -21,7 +20,7 @@ namespace Kurs
             : base("name=ZooBdEntities1")
         {
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -34,6 +33,8 @@ namespace Kurs
             return _context;
         }
 
+      
+    
         public virtual DbSet<Client> Client { get; set; }
         public virtual DbSet<DetailsOrder> DetailsOrder { get; set; }
         public virtual DbSet<Order> Order { get; set; }
