@@ -24,14 +24,18 @@ namespace Kurs
         public MainWindow()
         {
             InitializeComponent();
+            AppConnect.zooBd = new ZooBdEntities1();
+            FrmMain.Navigate(new PageVxod());
             
         }
 
-        private void btn_perex_Click(object sender, RoutedEventArgs e)
+       
+        private void perexodBtn_Click(object sender, RoutedEventArgs e)
         {
-            AddProduct addProduct = new AddProduct();
-            addProduct.Show();
-            this.Close();
+            
+
+
+
         }
     }
 }

@@ -40,7 +40,7 @@ namespace Kurs
                 }
                 else
                 {
-                    switch (userObj.RoleID)
+                    switch (userObj.IdRole)
                     {
                         case 1:
                             MessageBox.Show("Hello admin " + userObj.Name + " !", "uvced", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -63,7 +63,7 @@ namespace Kurs
         }
         private void Btn_reg(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("PageReg.xaml", UriKind.Relative));
+            //NavigationService.Navigate(new Uri("PageReg.xaml", UriKind.Relative));
         }
     }
 }
