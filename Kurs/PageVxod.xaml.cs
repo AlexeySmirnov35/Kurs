@@ -95,7 +95,7 @@ namespace Kurs
         }
         private void Btn_reg(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("Vxod.xaml", UriKind.Relative));
+            NavigationService.Navigate(new Uri("PageReg.xaml", UriKind.Relative));
         }
     }
 }

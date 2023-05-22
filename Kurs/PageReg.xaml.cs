@@ -43,8 +43,9 @@ namespace Kurs
                     Password = tbPass.Password,
                     Name = tbName.Text,
                     Surname = tbLast.Text,
+                    IdRole = 2,
                     Birthday = ddata.SelectedDate,
-
+                     
                 };
                 AppConnect.zooBd.Client.Add(sotrrud);
                 AppConnect.zooBd.SaveChanges();
@@ -66,17 +67,45 @@ namespace Kurs
 
             return blnValidEmail;
         }
+        private static bool IsPasswordAllowed(string text)
+        {
+            bool blnValidPassword = false;
+            Regex regPassword = new Regex("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$");
+            if (text.Length > 0)
+            {
+                blnValidPassword = regPassword.IsMatch(text);
+            }
+
+            return blnValidPassword;
+        }
         private void PasswordChanged(object sender, RoutedEventArgs e)
         {
-            if (Pascop.Password != tbPass.Password) /*&& !Regex.IsMatch(tbLogin.Text,@"^[a-zA-Z][\w\.-]*[a-zA-Z0-9]@[a-zA-Z0-9][\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]$")*/
+
+            if ( IsPasswordAllowed(tbPass.Password.Trim()) == false)
             {
                 BtnSave.IsEnabled = false;
+                tbPass.Background = Brushes.Red;
+               
+
+            }
+            else
+            {
+                tbPass.Background = Brushes.Blue;
+                BtnSave.IsEnabled = true;
+
+
+            }
+            if (Pascop.Password != tbPass.Password )
+            {
+                BtnSave.IsEnabled = false;
+                
                 Pascop.Background = Brushes.LightCoral;
                 Pascop.BorderBrush = Brushes.Red;
 
             }
             else
             {
+                
                 BtnSave.IsEnabled = true;
                 Pascop.Background = Brushes.LightGreen;
                 Pascop.BorderBrush = Brushes.Green;
