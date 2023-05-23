@@ -105,6 +105,9 @@
     <Compile Include="Product.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="ProductsClient.xaml.cs">
+      <DependentUpon>ProductsClient.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Role.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -116,9 +119,6 @@
     </Compile>
     <Compile Include="TypeAnimals.cs">
       <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Vxod.xaml.cs">
-      <DependentUpon>Vxod.xaml</DependentUpon>
     </Compile>
     <Page Include="AddProduct.xaml">
       <SubType>Designer</SubType>
@@ -144,7 +144,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Vxod.xaml">
+    <Page Include="ProductsClient.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -190,6 +190,7 @@
     <Resource Include="img\img1.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="animal.jpg" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

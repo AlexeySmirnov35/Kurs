@@ -50,7 +50,7 @@ namespace Kurs
                 var userObj = AppConnect.zooBd.Client.FirstOrDefault(x => x.Email == tbLogin.Text && x.Password == Ppasword.Password);
                 if (userObj == null && sotrObj == null)
                 {
-                    MessageBox.Show("Takogo net", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Похоже что вы не зарегистрированы, пожалуйста, зарегистрируйтесь ", "Ошибка авторизации", MessageBoxButton.OK, MessageBoxImage.Error);
 
                 }
                 else if (sotrObj == null) 
@@ -58,8 +58,10 @@ namespace Kurs
                     switch (userObj.IdRole)
                     {
                         case 1:
-                            MessageBox.Show("Hello adminclient" + userObj.Name + "!", "uvced", MessageBoxButton.OK, MessageBoxImage.Information);
-                            NavigationService.Navigate(new Uri("PageReg.xaml", UriKind.Relative));
+                            MessageBox.Show("Приветсвуем Вас, " + userObj.Name + "!", "Успешная авторизация", MessageBoxButton.OK, MessageBoxImage.Information);
+                            
+                            ProductsClient productsClient=new ProductsClient();
+                            productsClient.Show();
                             break;
                         case 2:
                             MessageBox.Show("Hello ckient " + userObj.Name + "!", "uvced", MessageBoxButton.OK, MessageBoxImage.Information);
@@ -78,7 +80,7 @@ namespace Kurs
                             NavigationService.Navigate(new Uri("PageVxod.xaml", UriKind.Relative));
                             break;
                         case 2:
-                            MessageBox.Show("Hello sotr " + sotrObj.Name + "!", "uvced", MessageBoxButton.OK, MessageBoxImage.Information);
+                            MessageBox.Show("Приветсвуем Вас " + sotrObj.Name + "!", "Вы вошли как соотрудник", MessageBoxButton.OK, MessageBoxImage.Information);
                             NavigationService.Navigate(new Uri("PageVxod.xaml", UriKind.Relative));
                             break;
                         default: MessageBox.Show("Ne onraz", "uved", MessageBoxButton.OK, MessageBoxImage.Warning); break;

@@ -4,17 +4,107 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Kurs"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="PageVxod">
+      mc:Ignorable="d"
+      Title="PageVxod" Height="507" Width="568">
 
-    <Grid Background="#FF4BE820">
+    <Grid >
+        <Grid.Background>
+            <ImageBrush ImageSource="/animal.jpg" Stretch="UniformToFill" TileMode="Tile"/>
+        </Grid.Background>
 
-        <PasswordBox HorizontalAlignment="Left" Margin="192,145,0,0" x:Name="Ppasword" VerticalAlignment="Top" Width="246" FontSize="22"/>
-        <Label Content="Пароль" HorizontalAlignment="Left" Margin="192,101,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.197,-0.587" FontSize="22"/>
-        <TextBox HorizontalAlignment="Left" Margin="192,70,0,0" x:Name="tbLogin" TextWrapping="Wrap" VerticalAlignment="Top" Width="246" FontSize="22"/>
-        <Label Content="Логин(почта)" HorizontalAlignment="Left" Margin="192,26,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.197,-0.587" FontSize="22"/>
-        <Button x:Name="BtnClick"  Content="Регистрация" HorizontalAlignment="Left" Click="Btn_reg" Margin="282,181,0,0" VerticalAlignment="Top" FontSize="22" Width="156"/>
-        <Button x:Name="BtnClick_Copy"  Content="Войти" Click="Btn_Click" HorizontalAlignment="Left" Margin="192,181,0,0" VerticalAlignment="Top" FontSize="22" Width="85"/>
+        <PasswordBox HorizontalAlignment="Left" Margin="102,271,0,0" x:Name="Ppasword" VerticalAlignment="Top" Width="320" FontSize="28" FontFamily="Comic Sans MS" Height="45">
+            <PasswordBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FFFBF075" Offset="1"/>
+                    <GradientStop Color="#FFFFB4B4"/>
+                </LinearGradientBrush>
+            </PasswordBox.Background>
+        </PasswordBox>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="99,222,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.197,-0.587" FontSize="28" FontWeight="Bold" Background="#00000000" FontFamily="Comic Sans MS" Height="69" Width="148">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Yellow"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <TextBox HorizontalAlignment="Left" Margin="102,171,0,0" x:Name="tbLogin" TextWrapping="Wrap" VerticalAlignment="Top" Width="320" FontSize="28" FontFamily="Comic Sans MS" Height="51">
+            <TextBox.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White"/>
+                    <GradientStop Color="#FFFBF075" Offset="1"/>
+                    <GradientStop Color="#FFFFB4B4"/>
+                </LinearGradientBrush>
+            </TextBox.Background>
+        </TextBox>
+        <Label Content="Логин(почта)" HorizontalAlignment="Left" Margin="99,117,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.197,-0.587" FontSize="28" FontWeight="Bold" Background="#00000000" FontFamily="Comic Sans MS" Height="69" Width="251">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Yellow"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Button x:Name="BtnClick"  Content="Регистрация" HorizontalAlignment="Left" Click="Btn_reg" Margin="225,335,0,0" VerticalAlignment="Top" FontSize="28" Width="202" Height="60" FontStyle="Italic" FontFamily="Comic Sans MS">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Yellow"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF7100FF" Offset="1"/>
+                    <GradientStop Color="#FF24E20A"/>
+                    <GradientStop Color="#FF00FF84"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="BtnClick_Copy"  Content="Войти" Click="Btn_Click" HorizontalAlignment="Left" Margin="99,335,0,0" VerticalAlignment="Top" FontSize="28" Width="111" Height="60" FontStyle="Italic" FontFamily="Comic Sans MS">
+            <Button.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Yellow"/>
+                    <GradientStop Color="Red" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Foreground>
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF4B28FB" Offset="1"/>
+                    <GradientStop Color="#FF24E20A"/>
+                    <GradientStop Color="#FF00FF84"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock Text="LinearGradientBrush" HorizontalAlignment="Left" VerticalAlignment="Top" Opacity="0.75" Margin="193,423,0,0">
+            <TextBlock.Foreground>
+                <LinearGradientBrush SpreadMethod="Repeat">
+                    <LinearGradientBrush.Transform>
+                        <TranslateTransform x:Name="LinearGradientBrushTranslate" />
+                    </LinearGradientBrush.Transform>
+                    <LinearGradientBrush.GradientStops>
+                        <GradientStop Offset="0.00" Color="#FFFF2B88" />
+                        <GradientStop Offset="0.14" Color="#FFFF9B6A" />
+                        <GradientStop Offset="0.28" Color="#FFF3D64E" />
+                        <GradientStop Offset="0.42" Color="#FFDCFF93" />
+                        <GradientStop Offset="0.56" Color="#FFB8F1CC" />
+                        <GradientStop Offset="0.70" Color="#FFD9B8F1" />
+                        <GradientStop Offset="0.85" Color="#FFCA7497" />
+                        <GradientStop Offset="1.00" Color="#FFFF2B88" />
+                    </LinearGradientBrush.GradientStops>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="TextBlock.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="LinearGradientBrushTranslate" Storyboard.TargetProperty="X" From="0" To="700" Duration="0:0:2" RepeatBehavior="Forever" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
+        </TextBlock>
     </Grid>
 </Page>
