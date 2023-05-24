@@ -83,6 +83,7 @@ namespace Kurs
 
             if ( IsPasswordAllowed(tbPass.Password.Trim()) == false)
             {
+                labelpass.Content = "Пароль должен содеражать:\nминимум 8 символов,\nцифры,заглавные и\nстрочные буквы латиницы";
                 BtnSave.IsEnabled = false;
                 tbPass.Background = Brushes.Red;
                
@@ -117,7 +118,7 @@ namespace Kurs
         {
             if (IsEmailAllowed(tbLogin.Text.Trim()) == false)
             {
-
+                labelemail.Content = "Не верный Email";
                 BtnSave.IsEnabled = false;
                 tbLogin.Background = Brushes.LightCoral;
                 tbLogin.BorderBrush = Brushes.Red;
