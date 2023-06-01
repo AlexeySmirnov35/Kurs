@@ -190,7 +190,14 @@
     <Resource Include="img\img1.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="neonf.jpg" />
+    <Resource Include="powborder.jpg" />
+    <Resource Include="pawgr.png" />
     <Resource Include="animal.jpg" />
+    <Resource Include="fonpw.png" />
+    <Resource Include="fon.png" />
+    <Resource Include="fonr.png" />
+    <Resource Include="borpaw.png" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

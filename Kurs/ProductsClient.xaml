@@ -5,9 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kurs"
         mc:Ignorable="d"
-        Title="ProductsClient" Height="900" Width="1200">
-    <Grid Width="1200" Height="1200">
-        <ListView x:Name="listview" Height="561" Margin="0,10,0,0" Width="1168" d:ItemsSource="{d:SampleData ItemCount=5}" OpacityMask="#FFFBF7F7" Foreground="#FF101623" BorderBrush="#FF111211" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontFamily="Comic Sans MS" Background="{x:Null}" >
+        WindowState="Maximized"
+        Title="ProductsClient">
+    <Window.Background>
+        <ImageBrush ImageSource="/neonf.jpg" Stretch="Fill"/>
+    </Window.Background>
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="None"/>
+        </Grid.Background>
+        <ListView x:Name="listview" d:ItemsSource="{d:SampleData ItemCount=5}" OpacityMask="#FFFBF7F7" Foreground="#FFF7F7F7" BorderBrush="#FF111211" VerticalAlignment="Top" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="24" FontFamily="Comic Sans MS" Background="{x:Null}"  >
+            <ListView.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.069"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </ListView.RenderTransform>
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Наименование" DisplayMemberBinding="{Binding NameProduct}"/>
