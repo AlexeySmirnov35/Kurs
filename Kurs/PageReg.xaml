@@ -136,7 +136,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <DatePicker x:Name="ddata" HorizontalAlignment="Left" Margin="16,298,0,0" VerticalAlignment="Top" Height="47" Width="331" FontSize="28" FontFamily="Comic Sans MS">
+        <DatePicker x:Name="ddata" HorizontalAlignment="Left" Margin="16,299,0,0" VerticalAlignment="Top" Height="47" Width="331" FontSize="28" FontFamily="Comic Sans MS">
             <DatePicker.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Yellow"/>
