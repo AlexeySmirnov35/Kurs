@@ -65,7 +65,8 @@ namespace Kurs
                             break;
                         case 2:
                             MessageBox.Show("Hello ckient " + userObj.Name + "!", "uvced", MessageBoxButton.OK, MessageBoxImage.Information);
-                            NavigationService.Navigate(new Uri("PageReg.xaml", UriKind.Relative));
+                            AddProduct addProduct = new AddProduct();
+                            addProduct.Show();
                             break;
                         default: MessageBox.Show("Ne onraz", "uved", MessageBoxButton.OK, MessageBoxImage.Warning); break;
 
@@ -81,7 +82,11 @@ namespace Kurs
                             break;
                         case 2:
                             MessageBox.Show("Приветсвуем Вас " + sotrObj.Name + "!", "Вы вошли как соотрудник", MessageBoxButton.OK, MessageBoxImage.Information);
-                            NavigationService.Navigate(new Uri("PageVxod.xaml", UriKind.Relative));
+                            MainProduct mainProduct = new MainProduct();
+                            mainProduct.Show();
+                            
+                            //AddProduct addProduct = new AddProduct();
+                            //addProduct.Show();
                             break;
                         default: MessageBox.Show("Ne onraz", "uved", MessageBoxButton.OK, MessageBoxImage.Warning); break;
 

@@ -10,11 +10,11 @@
     <Window.Background>
         <ImageBrush ImageSource="/neonf.jpg" Stretch="Fill"/>
     </Window.Background>
-    <Grid>
+    <Grid Height="1082.44666666667">
         <Grid.Background>
-            <ImageBrush Stretch="None"/>
+            <ImageBrush Stretch="UniformToFill" ImageSource="/img/pawgr.png" TileMode="Tile"/>
         </Grid.Background>
-        <ListView x:Name="listview" d:ItemsSource="{d:SampleData ItemCount=5}" OpacityMask="#FFFBF7F7" Foreground="#FFF7F7F7" BorderBrush="#FF111211" VerticalAlignment="Top" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="24" FontFamily="Comic Sans MS" Background="{x:Null}"  >
+        <ListView x:Name="listview" d:ItemsSource="{d:SampleData ItemCount=5}" Foreground="White" BorderBrush="#FF111211" VerticalAlignment="Top" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="24" FontFamily="Comic Sans MS" Background="{x:Null}"  >
             <ListView.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -25,23 +25,17 @@
             </ListView.RenderTransform>
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Наименование" DisplayMemberBinding="{Binding NameProduct}"/>
+                    <GridViewColumn Header="Наименование" DisplayMemberBinding="{Binding NameProduct}" />
                     <GridViewColumn Header="Доступно в наличии" DisplayMemberBinding="{Binding Count}" />
                     <GridViewColumn Header="Цена" DisplayMemberBinding="{Binding PriceProd}"/>
                     <GridViewColumn Header="Описание" DisplayMemberBinding="{Binding Description}"/>
                     <GridViewColumn Header="Вид животного" DisplayMemberBinding="{Binding Id_TypeAnim}"/>
                     <GridViewColumn Header="Производитель" DisplayMemberBinding="{Binding Id_Provid}"/>
-                    <GridViewColumn Header="Фото товара">
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Image Source="{Binding PhotoProduct}" Width="200" Height="200"/>
-                            </DataTemplate>
-                        </GridViewColumn.CellTemplate>
-                    </GridViewColumn>
+                    
                 </GridView>
             </ListView.View>
         </ListView>
 
-
+        <Image Name="imgDynamic" Margin="10" Width="1000" Height="1002"  />
     </Grid>
 </Window>

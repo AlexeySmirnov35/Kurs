@@ -16,17 +16,15 @@ using System.Windows.Shapes;
 namespace Kurs
 {
     /// <summary>
-    /// Логика взаимодействия для ProductsClient.xaml
+    /// Логика взаимодействия для MainProduct.xaml
     /// </summary>
-    public partial class ProductsClient : Window
+    public partial class MainProduct : Window
     {
-        public ProductsClient()
+        public MainProduct()
         {
             InitializeComponent();
             AppConnect.zooBd = new ZooBdEntities1();
-            listview.ItemsSource = ZooBdEntities1.GetContext().Product.ToList();
-            Uri resourceUri = new Uri("/Images/white_bengal_tiger.jpg", UriKind.Relative);
-            imgDynamic.Source = new BitmapImage(resourceUri);
+            FraimProd.Navigate(new GlavPage());
         }
     }
 }

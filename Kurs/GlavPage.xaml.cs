@@ -11,22 +11,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace Kurs
 {
     /// <summary>
-    /// Логика взаимодействия для ProductsClient.xaml
+    /// Логика взаимодействия для GlavPage.xaml
     /// </summary>
-    public partial class ProductsClient : Window
+    public partial class GlavPage : Page
     {
-        public ProductsClient()
+        public GlavPage()
         {
             InitializeComponent();
             AppConnect.zooBd = new ZooBdEntities1();
             listview.ItemsSource = ZooBdEntities1.GetContext().Product.ToList();
-            Uri resourceUri = new Uri("/Images/white_bengal_tiger.jpg", UriKind.Relative);
-            imgDynamic.Source = new BitmapImage(resourceUri);
+        }
+
+        private void Btn_Create(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("AddEditProduct.xaml", UriKind.Relative));
+            
+
         }
     }
 }
