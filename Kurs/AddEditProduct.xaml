@@ -99,7 +99,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <TextBox Text="{Binding Description}" AcceptsReturn="True" x:Name="tbDesc" HorizontalAlignment="Left" Margin="724,77,15,0" VerticalAlignment="Top" FontSize="28" FontFamily="Comic Sans MS" Height="258" Width="405">
+        <TextBox Text="{Binding Description}" AcceptsReturn="True" TextWrapping="Wrap" x:Name="tbDesc" HorizontalAlignment="Left" Margin="724,77,15,0" VerticalAlignment="Top" FontSize="28" FontFamily="Comic Sans MS" Height="258" Width="405">
             <TextBox.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFFB8989" Offset="0.003"/>
