@@ -23,9 +23,12 @@ namespace Kurs
         public static ZooBdEntities1 GetContext()
         {
             if (_context == null)
+            {
                 _context = new ZooBdEntities1();
+            }
             return _context;
         }
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

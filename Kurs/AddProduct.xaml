@@ -8,7 +8,7 @@
         Title="AddProduct" IsVisibleChanged="Page_IsVis" Height="auto" Width="auto" MinWidth="1294" MinHeight="1172">
     <Grid >
         <Grid.Background>
-            <ImageBrush Stretch="Fill" ImageSource="/animal.jpg" TileMode="Tile">
+            <ImageBrush Stretch="Fill" ImageSource="/img/animal.jpg" TileMode="Tile">
                 <ImageBrush.RelativeTransform>
                     <TransformGroup>
                         <ScaleTransform CenterY="0.5" CenterX="0.5"/>

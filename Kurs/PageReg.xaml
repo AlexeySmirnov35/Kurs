@@ -175,6 +175,7 @@
             </Label.Foreground>
         </Label>
         <Label x:Name="labelpass_Copy" Content="" HorizontalAlignment="Left" Margin="724,245,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="24"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="789,322,0,0" VerticalAlignment="Top" Width="100"/>
 
     </Grid>
 </Page>

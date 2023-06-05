@@ -25,14 +25,50 @@ namespace Kurs
         {
             InitializeComponent();
             AppConnect.zooBd = new ZooBdEntities1();
-            listview.ItemsSource = ZooBdEntities1.GetContext().Product.ToList();
+           
         }
-
+        
         private void Btn_Create(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new Uri("AddEditProduct.xaml", UriKind.Relative));
+            NavigationService.Navigate(new AddEditProduct(null));
             
 
+        }
+
+        private void Page_IsVis(object sender, DependencyPropertyChangedEventArgs e)
+        {
+           
+        if (Visibility == Visibility.Visible)
+            {
+                ZooBdEntities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
+                listview.ItemsSource=ZooBdEntities1.GetContext().Product.ToList();
+            }
+            
+        }
+
+        private void Btn_Edit_Click(object sender, RoutedEventArgs e)
+        {
+
+            NavigationService.Navigate(new AddEditProduct((sender as Button).DataContext as Product));
+        }
+
+        private void Btn_Del(object sender, RoutedEventArgs e)
+        {
+            var productDelete = listview.SelectedItems.Cast<Product>().ToList();
+            if(MessageBox.Show($"You del? {productDelete.Count()} elements", "Vnim", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            {
+                try
+                {
+                    ZooBdEntities1.GetContext().Product.RemoveRange(productDelete);
+                    ZooBdEntities1.GetContext().SaveChanges();
+                    MessageBox.Show("Delete good");
+                    listview.ItemsSource = ZooBdEntities1.GetContext().Product.ToList();
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show(ex.Message.ToString());
+                }
+            }
         }
     }
 }

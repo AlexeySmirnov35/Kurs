@@ -219,6 +219,8 @@
     <Resource Include="img\fon.png" />
     <Resource Include="img\fonr.png" />
     <Resource Include="img\borpaw.png" />
+    <Resource Include="Image1.png" />
+    <Resource Include="Image2.png" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

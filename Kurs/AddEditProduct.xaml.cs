@@ -22,9 +22,13 @@ namespace Kurs
     public partial class AddEditProduct : Page
     {
         private Product _product = new Product();
-        public AddEditProduct()
+        public AddEditProduct(Product selectGlavPage)
         {
             InitializeComponent();  
+            if(selectGlavPage != null)
+            {
+                _product = selectGlavPage;
+            }
             AppConnect.zooBd = new ZooBdEntities1();
             DataContext = _product;
             tbAmimal.ItemsSource = ZooBdEntities1.GetContext().TypeAnimals.ToList();
@@ -33,15 +37,34 @@ namespace Kurs
 
         private void Btn_save(object sender, RoutedEventArgs e)
         {
+
             StringBuilder errors = new StringBuilder();
-            if (_product.Id_Prod == 0)
+            if (string.IsNullOrWhiteSpace(_product.NameProduct))
+                errors.AppendLine("Укажите название продукта");
+            if (string.IsNullOrWhiteSpace(_product.Description))
+                errors.AppendLine("Напишите описание");
+            if (_product.PriceProd<1 && _product.PriceProd==null)
+                errors.AppendLine("Укажите цену большу 1");
+            if (_product.Count < 1 && _product.Count==null)
+                errors.AppendLine("Укажите количество больше 1");
+            if(_product.Povider==null)
+                errors.AppendLine("Укажите производителя");
+            if (_product.TypeAnimals == null)
+                errors.AppendLine("Укажите категорию зверька");
+            if(errors.Length > 0)
             {
-                ZooBdEntities1.GetContext().Product.Add(_product);
+                MessageBox.Show(errors.ToString());
+                return;
             }
+            
+            if (_product.Id_Prod == 0)
+                ZooBdEntities1.GetContext().Product.Add(_product);
+
             try
             {
                 ZooBdEntities1.GetContext().SaveChanges();
                 MessageBox.Show("Save");
+                NavigationService.GoBack();
             }
             catch (Exception ex)
             {
@@ -51,13 +74,6 @@ namespace Kurs
         }
      
 
-        private void Page_IsVis(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            if (Visibility == Visibility.Visible)
-            {
-                ZooBdEntities1.GetContext().ChangeTracker.Entries().ToList().ForEach(p => p.Reload());
-               // listview.ItemsSource=ZooBdEntities1.GetContext().Product.ToList();
-            }
-        }
+
     }
 }
