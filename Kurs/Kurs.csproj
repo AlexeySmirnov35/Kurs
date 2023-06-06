@@ -81,6 +81,9 @@
     <Compile Include="GlavPage.xaml.cs">
       <DependentUpon>GlavPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GlavProductClient.xaml.cs">
+      <DependentUpon>GlavProductClient.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainProduct.xaml.cs">
       <DependentUpon>MainProduct.xaml</DependentUpon>
     </Compile>
@@ -107,6 +110,9 @@
     </Compile>
     <Compile Include="PageVxod.xaml.cs">
       <DependentUpon>PageVxod.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PodrobnoPage.xaml.cs">
+      <DependentUpon>PodrobnoPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Povider.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -141,6 +147,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="GlavProductClient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainProduct.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -162,6 +172,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PageVxod.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PodrobnoPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -222,6 +236,12 @@
     <Resource Include="Image1.png" />
     <Resource Include="Image2.png" />
     <Resource Include="Image3.png" />
+    <Resource Include="Image4.png" />
+    <Resource Include="Image5.png" />
+    <Resource Include="lion.jpg" />
+    <Resource Include="lion1.jpg" />
+    <Resource Include="lion2.jpg" />
+    <Resource Include="lion3.jpg" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>
