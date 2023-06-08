@@ -12,29 +12,18 @@ namespace Kurs
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class Category
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
+        public Category()
         {
-            this.DetailsOrder = new HashSet<DetailsOrder>();
+            this.Product = new HashSet<Product>();
         }
     
-        public int Id_Prod { get; set; }
-        public string NameProduct { get; set; }
-        public Nullable<int> Count { get; set; }
-        public Nullable<int> PriceProd { get; set; }
-        public string Description { get; set; }
-        public Nullable<int> Id_TypeAnim { get; set; }
-        public Nullable<int> Id_Provid { get; set; }
-        public byte[] PhotoProduct { get; set; }
-        public Nullable<int> Massa { get; set; }
-        public Nullable<int> Id_cat { get; set; }
+        public int Id_Category { get; set; }
+        public string NameCat { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<DetailsOrder> DetailsOrder { get; set; }
-        public virtual Povider Povider { get; set; }
-        public virtual TypeAnimals TypeAnimals { get; set; }
-        public virtual Category Category { get; set; }
+        public virtual ICollection<Product> Product { get; set; }
     }
 }

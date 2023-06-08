@@ -22,13 +22,10 @@ namespace Kurs
         }
         public static ZooBdEntities1 GetContext()
         {
-            if (_context==null)
-            {
-                _context =new  ZooBdEntities1();
-            }
+            if (_context == null)
+                _context = new ZooBdEntities1();
             return _context;
         }
-    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -43,5 +40,6 @@ namespace Kurs
         public virtual DbSet<Sotrudnik> Sotrudnik { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<TypeAnimals> TypeAnimals { get; set; }
+        public virtual DbSet<Category> Category { get; set; }
     }
 }

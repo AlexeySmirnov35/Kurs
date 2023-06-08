@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -49,7 +50,7 @@ namespace Kurs
         private void Btn_Edit_Click(object sender, RoutedEventArgs e)
         {
 
-            NavigationService.Navigate(new AddEditProduct((sender as Button).DataContext as Product));
+            NavigationService.Navigate(new AddEditProduct((sender as System.Windows.Controls.Button).DataContext as Product));
         }
 
         private void Btn_Del(object sender, RoutedEventArgs e)
@@ -69,6 +70,21 @@ namespace Kurs
                     MessageBox.Show(ex.Message.ToString());
                 }
             }
+        }
+        private void UpdateProduct()
+        {
+            var curProduct = ZooBdEntities1.GetContext().Product.ToList();
+           
+
+            curProduct = curProduct.Where(p => p.NameProduct.ToLower().Contains(TboxSerch.Text.ToLower())).ToList();
+            listview.ItemsSource = curProduct.OrderBy(p => p.Count).ToList();
+
+        }
+       
+
+        private void Tbox_Search(object sender, TextChangedEventArgs e)
+        {
+            UpdateProduct();
         }
     }
 }

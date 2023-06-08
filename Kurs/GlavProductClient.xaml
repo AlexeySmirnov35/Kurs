@@ -15,7 +15,7 @@
         </Grid.Background>
 
         <!--Your comment-->
-        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center"  >
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,391"  >
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Поиск: " Width="175" FontSize="20" TextAlignment="Right" HorizontalAlignment="Center" VerticalAlignment="Center">
                     <TextBlock.Foreground>
@@ -27,6 +27,7 @@
                     </TextBlock.Foreground></TextBlock>
                 <TextBox Width="369" Name="TboxSerch" TextChanged="Tbox_Search" Height="54" FontSize="20"></TextBox>
             </StackPanel>
+            <!--Your comment
             <StackPanel Orientation="Horizontal">
                 <TextBlock Text="Выберете категорию: " Width="229" FontSize="20" TextAlignment="Right" VerticalAlignment="Center">
                     <TextBlock.Foreground>
@@ -37,7 +38,7 @@
                         </LinearGradientBrush>
                     </TextBlock.Foreground></TextBlock>
                 <ComboBox Width="301" x:Name="ComboType" SelectionChanged="ComboType_SelectionChanged" DisplayMemberPath="NameType" FontSize="20" Background="{x:Null}"/>
-            </StackPanel>
+            </StackPanel>-->
 
         </WrapPanel>
 
@@ -76,7 +77,7 @@
                         <TextBlock Text="{Binding NameProduct}" VerticalAlignment="Center" TextAlignment="Center" Width="300" TextWrapping="Wrap" Margin="5 5"
                                    HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"></TextBlock>
                         <TextBlock Text="{Binding PriceProd,StringFormat={}{0:N2} Руб}"  Grid.Row="2"  Margin="5 5 5 15" HorizontalAlignment="Center" FontSize="20" FontWeight="Bold"></TextBlock>
-                        <TextBlock Text="{Binding Count,StringFormat={}В наличии: {0}}" Grid.Row="3" HorizontalAlignment="Right" FontSize="15"></TextBlock>
+                        
 
                     </Grid>
                 </DataTemplate>

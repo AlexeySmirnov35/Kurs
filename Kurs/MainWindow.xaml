@@ -4,13 +4,17 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kurs"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"
-         SizeToContent="WidthAndHeight" >
+        mc:Ignorable="d" 
+        Title="Авторизация" Height="450" Width="800"
+         SizeToContent="WidthAndHeight" Icon="/img/img6logo.png">
 
     <Grid >
-      
-        <Frame x:Name="FrmMain" Content="Frame" Grid.ColumnSpan="3"/>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="147*"/>
+        </Grid.ColumnDefinitions>
+
+        <Frame x:Name="FrmMain" Content="Frame" Grid.ColumnSpan="2"/>
 
     </Grid>
 </Window>

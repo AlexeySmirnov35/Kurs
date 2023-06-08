@@ -30,18 +30,20 @@ namespace Kurs
             {
                 NameType = "Все категории"
             });
-            ComboType.ItemsSource = allTypes;
-            ComboType.SelectedIndex = 0;
+          // ComboType.ItemsSource = allTypes;
+            //ComboType.SelectedIndex = 0;
 
             UpdateProduct();
         }
         private void UpdateProduct()
         {
             var curProduct = ZooBdEntities1.GetContext().Product.ToList();
-            if (ComboType.SelectedIndex > 0)
+           /* if (ComboType.SelectedIndex > 0)
             {
-                //  curProduct=curProduct.Where(p => p.TypeAnimals.Contains(ComboType.SelectedItem as TypeAnimals)).ToList();
-            }
+               var anim=ComboType.SelectedItem as TypeAnimals;
+                curProduct=curProduct.Where(anim).ToList();
+                curProduct=curProduct.Where(p => p.TypeAnimals.Contains(ComboType.SelectedItem as TypeAnimals)).ToList();
+            }*/
 
             curProduct = curProduct.Where(p => p.NameProduct.ToLower().Contains(TboxSerch.Text.ToLower())).ToList();
             LVieew.ItemsSource = curProduct.OrderBy(p => p.Count).ToList();

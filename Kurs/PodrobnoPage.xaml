@@ -10,7 +10,7 @@
     <!--Your comment-->
     <Grid RenderTransformOrigin="0.5,0.5" Margin="0,0,0,-24" >
         <Grid.Background>
-            <ImageBrush Stretch="UniformToFill" ImageSource="/img/neonf.jpg" TileMode="Tile">
+            <ImageBrush Stretch="Fill" ImageSource="/lion3.jpg" TileMode="Tile">
                 <ImageBrush.RelativeTransform>
                     <TransformGroup>
                         <ScaleTransform CenterY="0.5" CenterX="0.5"/>
@@ -80,7 +80,7 @@
                 </LinearGradientBrush>
             </TextBlock.Background>
         </TextBlock>
-        <TextBlock Text="{Binding Count}" HorizontalAlignment="Left" Margin="477,113,0,0" TextWrapping="Wrap" x:Name="tbCount"  VerticalAlignment="Top" Width="332" FontSize="28" FontFamily="Comic Sans MS" Height="48">
+        <TextBlock Text="{Binding Count,StringFormat={}В наличии: {0}}" HorizontalAlignment="Left" Margin="477,113,0,0" TextWrapping="Wrap" x:Name="tbCount"  VerticalAlignment="Top" Width="332" FontSize="28" FontFamily="Comic Sans MS" Height="48">
             <TextBlock.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFFB8989" Offset="0.003"/>

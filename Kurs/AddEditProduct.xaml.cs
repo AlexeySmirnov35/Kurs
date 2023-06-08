@@ -26,7 +26,7 @@ namespace Kurs
     {
         private byte[] img = null;
         private Product _product = new Product();
-        private Product curproduct = null;
+        
       /*  public AddEditProduct()
         {
             InitializeComponent();
@@ -38,12 +38,13 @@ namespace Kurs
             {
                 _product = selectGlavPage;
             }
-            curproduct = selectGlavPage;
+            
           
             AppConnect.zooBd = new ZooBdEntities1();
             DataContext = _product;
             tbAmimal.ItemsSource = ZooBdEntities1.GetContext().TypeAnimals.ToList();
             tbProvider.ItemsSource = ZooBdEntities1.GetContext().Povider.ToList();
+            tbCat.ItemsSource = ZooBdEntities1.GetContext().Category.ToList();
         }
         OpenFileDialog fileOpen = new OpenFileDialog();
         private void Image_Load(object sender, RoutedEventArgs e)

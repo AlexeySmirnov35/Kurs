@@ -5,6 +5,13 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Хранилище ZooBdModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id_Category" />
+          </Key>
+          <Property Name="Id_Category" Type="int" Nullable="false" />
+          <Property Name="NameCat" Type="nvarchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="Client">
           <Key>
             <PropertyRef Name="Id_client" />
@@ -54,6 +61,7 @@
           <Property Name="Id_Provid" Type="int" />
           <Property Name="PhotoProduct" Type="varbinary(max)" />
           <Property Name="Massa" Type="int" />
+          <Property Name="Id_cat" Type="int" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -139,6 +147,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_Product_Category">
+          <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+          <End Role="Product" Type="Self.Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id_Category" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Id_cat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_Sotrudnik_Role">
           <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
           <End Role="Sotrudnik" Type="Self.Sotrudnik" Multiplicity="*" />
@@ -152,6 +172,7 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="Хранилище ZooBdModelContainer">
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="DetailsOrder" EntityType="Self.DetailsOrder" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Order" EntityType="Self.Order" Schema="dbo" store:Type="Tables" />
@@ -176,6 +197,10 @@
           <AssociationSet Name="FK_Order_Client" Association="Self.FK_Order_Client">
             <End Role="Client" EntitySet="Client" />
             <End Role="Order" EntitySet="Order" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Product_Category" Association="Self.FK_Product_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Product" EntitySet="Product" />
           </AssociationSet>
           <AssociationSet Name="FK_Sotrudnik_Role" Association="Self.FK_Sotrudnik_Role">
             <End Role="Role" EntitySet="Role" />
@@ -240,11 +265,13 @@
           <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="Id_TypeAnim" Type="Int32" />
           <Property Name="Id_Provid" Type="Int32" />
-          <Property Name="PhotoProduct" Type="Binary" />
+          <Property Name="PhotoProduct" Type="Binary" MaxLength="Max" FixedLength="false" />
           <NavigationProperty Name="DetailsOrder" Relationship="Self.FK_DetailsOrder_Product" FromRole="Product" ToRole="DetailsOrder" />
           <NavigationProperty Name="Povider" Relationship="Self.FK_Product_Povider" FromRole="Product" ToRole="Povider" />
           <NavigationProperty Name="TypeAnimals" Relationship="Self.FK_Product_TypeAnimals" FromRole="Product" ToRole="TypeAnimals" />
           <Property Name="Massa" Type="Int32" />
+          <Property Name="Id_cat" Type="Int32" />
+          <NavigationProperty Name="Category" Relationship="ZooBdModel.FK_Product_Category" FromRole="Product" ToRole="Category" />
         </EntityType>
         <EntityType Name="Role">
           <Key>
@@ -408,7 +435,32 @@
             <End Role="Role" EntitySet="Role" />
             <End Role="Sotrudnik" EntitySet="Sotrudnik" />
           </AssociationSet>
+          <EntitySet Name="Category" EntityType="ZooBdModel.Category" />
+          <AssociationSet Name="FK_Product_Category" Association="ZooBdModel.FK_Product_Category">
+            <End Role="Category" EntitySet="Category" />
+            <End Role="Product" EntitySet="Product" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Category">
+          <Key>
+            <PropertyRef Name="Id_Category" />
+          </Key>
+          <Property Name="Id_Category" Type="Int32" Nullable="false" />
+          <Property Name="NameCat" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Product" Relationship="ZooBdModel.FK_Product_Category" FromRole="Category" ToRole="Product" />
+        </EntityType>
+        <Association Name="FK_Product_Category">
+          <End Type="ZooBdModel.Category" Role="Category" Multiplicity="0..1" />
+          <End Type="ZooBdModel.Product" Role="Product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Category">
+              <PropertyRef Name="Id_Category" />
+            </Principal>
+            <Dependent Role="Product">
+              <PropertyRef Name="Id_cat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -458,6 +510,7 @@
           <EntitySetMapping Name="Product">
             <EntityTypeMapping TypeName="ZooBdModel.Product">
               <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="Id_cat" ColumnName="Id_cat" />
                 <ScalarProperty Name="PhotoProduct" ColumnName="PhotoProduct" />
                 <ScalarProperty Name="Massa" ColumnName="Massa" />
                 <ScalarProperty Name="Id_Prod" ColumnName="Id_Prod" />
@@ -507,6 +560,14 @@
               <MappingFragment StoreEntitySet="TypeAnimals">
                 <ScalarProperty Name="Id_Anim" ColumnName="Id_Anim" />
                 <ScalarProperty Name="NameType" ColumnName="NameType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Category">
+            <EntityTypeMapping TypeName="ZooBdModel.Category">
+              <MappingFragment StoreEntitySet="Category">
+                <ScalarProperty Name="NameCat" ColumnName="NameCat" />
+                <ScalarProperty Name="Id_Category" ColumnName="Id_Category" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

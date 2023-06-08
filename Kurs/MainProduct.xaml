@@ -6,7 +6,8 @@
         xmlns:local="clr-namespace:Kurs"
         mc:Ignorable="d"
         Title="MainProduct" Height="450" Width="800"
-        SizeToContent="WidthAndHeight">
+        WindowState="Maximized" WindowStyle="None"
+        >
     <Grid>
         <Frame x:Name="FraimProd" Content="Frame"/>
 
