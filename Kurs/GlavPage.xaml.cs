@@ -55,13 +55,13 @@ namespace Kurs
         private void Btn_Del(object sender, RoutedEventArgs e)
         {
             var productDelete = listview.SelectedItems.Cast<Product>().ToList();
-            if(MessageBox.Show($"You del? {productDelete.Count()} elements", "Vnim", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+            if(MessageBox.Show($"Вы дейстиветльно хотите удалить эти {productDelete.Count()} элемента!?", "Предупреждение", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 try
                 {
                     ZooBdEntities1.GetContext().Product.RemoveRange(productDelete);
                     ZooBdEntities1.GetContext().SaveChanges();
-                    MessageBox.Show("Delete good");
+                    MessageBox.Show("Удаление прошло успешно");
                     listview.ItemsSource = ZooBdEntities1.GetContext().Product.ToList();
                 }
                 catch(Exception ex)

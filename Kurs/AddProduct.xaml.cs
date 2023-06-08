@@ -51,7 +51,7 @@ namespace Kurs
             try
             {
                 ZooBdEntities1.GetContext().SaveChanges();
-                MessageBox.Show("Save");
+                MessageBox.Show("Сохранение прошло успешно");
             }
             catch (Exception ex)
             {

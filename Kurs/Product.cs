@@ -27,7 +27,8 @@ namespace Kurs
         public string Description { get; set; }
         public Nullable<int> Id_TypeAnim { get; set; }
         public Nullable<int> Id_Provid { get; set; }
-        public string PhotoProduct { get; set; }
+        public byte[] PhotoProduct { get; set; }
+        public Nullable<int> Massa { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DetailsOrder> DetailsOrder { get; set; }

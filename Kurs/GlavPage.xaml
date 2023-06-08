@@ -12,19 +12,34 @@
         <Grid.Background>
             <ImageBrush ImageSource="/img/neonf.jpg"/>
         </Grid.Background>
-        <ListView x:Name="listview" Height="692" Width="1362" d:ItemsSource="{d:SampleData ItemCount=5}" Foreground="#FF101623" BorderBrush="#FF111211" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontFamily="Comic Sans MS" Background="White" Margin="20,20,20,0" >
+        <ListView x:Name="listview"  Height="692" d:ItemsSource="{d:SampleData ItemCount=5}" Foreground="#FF101623" BorderBrush="#FF111211" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontFamily="Comic Sans MS" Background="White" Margin="20,20,20,0" Width="1645" >
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="Наименование" DisplayMemberBinding="{Binding NameProduct}"/>
-                    <GridViewColumn Header="Доступно в наличии" DisplayMemberBinding="{Binding Count}" />
-                    <GridViewColumn Header="Цена" DisplayMemberBinding="{Binding PriceProd}"/>
-                    <GridViewColumn Header="Описание" DisplayMemberBinding="{Binding Description}"/>
+                    <GridViewColumn Header="Количество" DisplayMemberBinding="{Binding Count,StringFormat={}шт}" />
+                    <GridViewColumn Header="Цена" DisplayMemberBinding="{Binding PriceProd}" />
+                    <GridViewColumn Header="Вес" DisplayMemberBinding="{Binding Massa}"/>
+                    <GridViewColumn Header="Описание">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Description}" TextWrapping="Wrap" Width="400"></TextBlock>
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
                     <GridViewColumn Header="Вид животного" DisplayMemberBinding="{Binding TypeAnimals.NameType}"/>
-                    <GridViewColumn Header="Производитель" DisplayMemberBinding="{Binding Id_Provid}"/>
+                    <GridViewColumn Header="Производитель"   DisplayMemberBinding="{Binding Id_Provid.NameProvider}"/>
                     <GridViewColumn Header="Фото товара">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Image Source="{Binding PhotoProduct}" Width="200" Height="200"/>
+                                <Image  Width="200" Height="200">
+                                    <Image.Source>
+                                        <Binding Path="PhotoProduct">
+                                            <Binding.TargetNullValue>
+                                                <ImageSource>img/fon.png</ImageSource>
+                                            </Binding.TargetNullValue>
+                                        </Binding>
+                                    </Image.Source>
+                                </Image>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
