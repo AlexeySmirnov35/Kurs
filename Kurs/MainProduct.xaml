@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Kurs"
         mc:Ignorable="d"
-        Title="MainProduct" Height="450" Width="800"
-        WindowState="Maximized" 
-        >
-    <Grid>
+        Title="СохранениеПродукта" Height="450" Width="800"
+        SizeToContent="WidthAndHeight" Icon="/img/img6logo.png" HorizontalAlignment="Center" VerticalAlignment="Center"
+        
+        WindowStartupLocation="CenterOwner" >
+    <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
         <Frame x:Name="FraimProd" Content="Frame"/>
 
     </Grid>

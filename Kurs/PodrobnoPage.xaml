@@ -8,9 +8,9 @@
       Height="auto" Width="auto"
       Title="PodrobnoPage">
     <!--Your comment-->
-    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,0,0,-24" >
+    <Grid RenderTransformOrigin="0.5,0.5" Height="818" Width="1516" >
         <Grid.Background>
-            <ImageBrush Stretch="Fill" ImageSource="/lion3.jpg" TileMode="Tile">
+            <ImageBrush Stretch="Fill" ImageSource="/img/lion3.jpg" TileMode="Tile">
                 <ImageBrush.RelativeTransform>
                     <TransformGroup>
                         <ScaleTransform CenterY="0.5" CenterX="0.5"/>
@@ -22,7 +22,7 @@
             </ImageBrush>
         </Grid.Background>
 
-        <Label Content="Цена проудкта" HorizontalAlignment="Left" Margin="453,442,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.197,-0.587" FontSize="28" Background="#00000000" FontFamily="Comic Sans MS" Height="58" Width="276">
+        <Label Content="Описание" HorizontalAlignment="Left" Margin="563,409,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.197,-0.587" FontSize="28" Background="#00000000" FontFamily="Comic Sans MS" Height="58" Width="276">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" MappingMode="RelativeToBoundingBox" SpreadMethod="Reflect">
                     <LinearGradientBrush.RelativeTransform>
@@ -39,23 +39,25 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <TextBlock Text="{Binding NameProduct}" HorizontalAlignment="Center" Margin="0,10,0,0" TextWrapping="Wrap" x:Name="tbName" VerticalAlignment="Top" Width="331" FontSize="28" FontFamily="Comic Sans MS" Height="48">
-            <TextBlock.Background>
+        <TextBlock Text="{Binding NameProduct}" HorizontalAlignment="Center" Margin="0,10,0,0" TextAlignment="Center" TextWrapping="Wrap" x:Name="tbName" VerticalAlignment="Top" Width="594" FontSize="55" FontFamily="Comic Sans MS" Height="68" FontWeight="Bold" TextDecorations="Underline">
+            <TextBlock.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFFB8989" Offset="0.003"/>
-                    <GradientStop Color="#FFF1FF72" Offset="1"/>
+                    <GradientStop Color="#FF06B1F9" Offset="0"/>
+                    <GradientStop Color="#FF7AFF11" Offset="1"/>
+                    <GradientStop Color="#FF05B300" Offset="1"/>
                 </LinearGradientBrush>
-            </TextBlock.Background>
+            </TextBlock.Foreground>
         </TextBlock>
-        <TextBlock x:Name="tbAmimal"  HorizontalAlignment="Left" Margin="477,194,0,0" VerticalAlignment="Top" Width="331" FontSize="28" FontFamily="Comic Sans MS" Height="46" Text="{Binding TypeAnimals.NameType}" >
-            <TextBlock.Background>
+        <TextBlock x:Name="tbAmimal"  HorizontalAlignment="Left" Margin="921,199,0,0" VerticalAlignment="Top" Width="331" FontSize="28" FontFamily="Comic Sans MS" Height="46" Text="{Binding TypeAnimals.NameType}" >
+            <TextBlock.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFFB8989" Offset="0.003"/>
-                    <GradientStop Color="#FFF1FF72" Offset="1"/>
+                    <GradientStop Color="#FF06B1F9" Offset="0"/>
+                    <GradientStop Color="#FF7AFF11" Offset="1"/>
+                    <GradientStop Color="#FF05B300" Offset="1"/>
                 </LinearGradientBrush>
-            </TextBlock.Background>
+            </TextBlock.Foreground>
         </TextBlock>
-        <Label Content="Категория животного " HorizontalAlignment="Left" Margin="826,189,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.197,-0.587" FontSize="28" FontFamily="Comic Sans MS" Height="58" Width="408">
+        <Label Content="Категория животного: " HorizontalAlignment="Left" Margin="563,183,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.197,-0.587" FontSize="28" FontFamily="Comic Sans MS" Height="58" Width="408">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" MappingMode="RelativeToBoundingBox" SpreadMethod="Reflect">
                     <LinearGradientBrush.RelativeTransform>
@@ -72,23 +74,25 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <TextBlock Text="{Binding Description}"  TextWrapping="Wrap" x:Name="tbDesc" HorizontalAlignment="Left" Margin="10,569,0,0" VerticalAlignment="Top" FontSize="28" FontFamily="Comic Sans MS" Height="258" Width="558">
-            <TextBlock.Background>
+        <TextBlock Text="{Binding Description}"  TextWrapping="Wrap" x:Name="tbDesc" HorizontalAlignment="Left" Margin="921,422,0,0" VerticalAlignment="Top" FontSize="28" FontFamily="Comic Sans MS" Height="330" Width="562">
+            <TextBlock.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFFB8989" Offset="0.003"/>
-                    <GradientStop Color="#FFF1FF72" Offset="1"/>
+                    <GradientStop Color="#FF06B1F9" Offset="0"/>
+                    <GradientStop Color="#FF7AFF11" Offset="1"/>
+                    <GradientStop Color="#FF05B300" Offset="1"/>
                 </LinearGradientBrush>
-            </TextBlock.Background>
+            </TextBlock.Foreground>
         </TextBlock>
-        <TextBlock Text="{Binding Count,StringFormat={}В наличии: {0}}" HorizontalAlignment="Left" Margin="477,113,0,0" TextWrapping="Wrap" x:Name="tbCount"  VerticalAlignment="Top" Width="332" FontSize="28" FontFamily="Comic Sans MS" Height="48">
-            <TextBlock.Background>
+        <TextBlock Text="{Binding Count}" HorizontalAlignment="Left" Margin="921,118,0,0" TextWrapping="Wrap" x:Name="tbCount"  VerticalAlignment="Top" Width="332" FontSize="28" FontFamily="Comic Sans MS" Height="48">
+            <TextBlock.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFFB8989" Offset="0.003"/>
-                    <GradientStop Color="#FFF1FF72" Offset="1"/>
+                    <GradientStop Color="#FF06B1F9" Offset="0"/>
+                    <GradientStop Color="#FF7AFF11" Offset="1"/>
+                    <GradientStop Color="#FF05B300" Offset="1"/>
                 </LinearGradientBrush>
-            </TextBlock.Background>
+            </TextBlock.Foreground>
         </TextBlock>
-        <Label Content="Количество" HorizontalAlignment="Left" Margin="826,113,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.197,-0.587" FontSize="28" FontFamily="Comic Sans MS" Height="57" Width="190">
+        <Label Content="Количество:" HorizontalAlignment="Left" Margin="563,107,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.197,-0.587" FontSize="28" FontFamily="Comic Sans MS" Height="57" Width="190">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" MappingMode="RelativeToBoundingBox" SpreadMethod="Reflect">
                     <LinearGradientBrush.RelativeTransform>
@@ -105,15 +109,16 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <TextBlock x:Name="tbProvider" Text="{Binding Povider.NameProvider }"   HorizontalAlignment="Left" Margin="477,265,0,0"  VerticalAlignment="Top" Width="332" FontSize="28" FontFamily="Comic Sans MS" Height="48">
-            <TextBlock.Background>
+        <TextBlock x:Name="tbProvider" Text="{Binding Povider.NameProvider }"   HorizontalAlignment="Left" Margin="921,270,0,0"  VerticalAlignment="Top" Width="332" FontSize="28" FontFamily="Comic Sans MS" Height="48">
+            <TextBlock.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFFB8989" Offset="0.003"/>
-                    <GradientStop Color="#FFF1FF72" Offset="1"/>
+                    <GradientStop Color="#FF06B1F9" Offset="0"/>
+                    <GradientStop Color="#FF7AFF11" Offset="1"/>
+                    <GradientStop Color="#FF05B300" Offset="1"/>
                 </LinearGradientBrush>
-            </TextBlock.Background>
+            </TextBlock.Foreground>
         </TextBlock>
-        <Label Content="Производитель" HorizontalAlignment="Left" Margin="833,257,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.197,-0.587" FontSize="28" FontFamily="Comic Sans MS" Height="56" Width="308">
+        <Label Content="Производитель:" HorizontalAlignment="Left" Margin="563,258,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.197,-0.587" FontSize="28" FontFamily="Comic Sans MS" Height="56" Width="308">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" MappingMode="RelativeToBoundingBox" SpreadMethod="Reflect">
                     <LinearGradientBrush.RelativeTransform>
@@ -130,13 +135,14 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <TextBlock Text="{Binding PriceProd}" HorizontalAlignment="Left" Margin="10,434,0,0" TextWrapping="Wrap" x:Name="tbPrice" VerticalAlignment="Top" Width="332" FontSize="28" FontFamily="Comic Sans MS" Height="48">
-            <TextBlock.Background>
+        <TextBlock Text="{Binding PriceProd,StringFormat={}{0:N2} Руб}" HorizontalAlignment="Left" Margin="79,586,0,0" TextWrapping="Wrap" x:Name="tbPrice" VerticalAlignment="Top" Width="332" FontSize="30" FontFamily="Comic Sans MS" Height="57">
+            <TextBlock.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFFB8989" Offset="0.003"/>
-                    <GradientStop Color="#FFF1FF72" Offset="1"/>
+                    <GradientStop Color="#FF06B1F9" Offset="0"/>
+                    <GradientStop Color="#FF7AFF11" Offset="1"/>
+                    <GradientStop Color="#FF05B300" Offset="1"/>
                 </LinearGradientBrush>
-            </TextBlock.Background>
+            </TextBlock.Foreground>
         </TextBlock>
         <Label x:Name="labelpass"  Content="" HorizontalAlignment="Left" Margin="719,436,0,0" VerticalAlignment="Top"  FontFamily="Comic Sans MS" FontSize="22" Height="128" Width="Auto" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.Foreground>
@@ -147,7 +153,7 @@
             </Label.Foreground>
         </Label>
         <Label x:Name="labelpass_Copy" Content="" HorizontalAlignment="Left" Margin="1131,374,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="24"/>
-        <Image Width="479" Stretch="Fill" HorizontalAlignment="Left" Margin="10,48,0,384">
+        <Image Width="500" Height="450" Stretch="Fill" HorizontalAlignment="Left" Margin="10,114,0,254">
             <Image.Source>
                 <Binding Path="PhotoProduct">
                     <Binding.TargetNullValue>
@@ -156,6 +162,44 @@
                 </Binding>
             </Image.Source>
         </Image>
+        <TextBlock HorizontalAlignment="Left" Text="{Binding Massa}" Margin="921,339,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Height="57" Width="332" FontFamily="Comic Sans MS" FontSize="28">
+            <TextBlock.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF06B1F9" Offset="0"/>
+                    <GradientStop Color="#FF7AFF11" Offset="1"/>
+                    <GradientStop Color="#FF05B300" Offset="1"/>
+                </LinearGradientBrush>
+            </TextBlock.Foreground>
+        </TextBlock>
+        <Label Content="Вес:" HorizontalAlignment="Left" Margin="563,332,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.197,-0.587" FontSize="28" Background="#00000000" FontFamily="Comic Sans MS" Height="58" Width="276">
+            <Label.Foreground>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0" MappingMode="RelativeToBoundingBox" SpreadMethod="Reflect">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform Angle="46" CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#FF06B1F9" Offset="0"/>
+                    <GradientStop Color="#FF7AFF11" Offset="1"/>
+                    <GradientStop Color="#FF05B300" Offset="1"/>
+                </LinearGradientBrush>
+            </Label.Foreground>
+        </Label>
+        <Button Content="Назад" HorizontalAlignment="Left" Margin="1259,757,0,0" VerticalAlignment="Top" Height="51" Width="224" FontSize="32" FontFamily="Comic Sans MS">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black"/>
+                    <GradientStop Color="#FF4B28FB" Offset="1"/>
+                    <GradientStop Color="#FF24E20A"/>
+                    <GradientStop Color="#FF00FF84"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Image HorizontalAlignment="Left" Height="96" Margin="18,10,0,0" VerticalAlignment="Top" Width="274" Source="/img/img3brend.png"/>
+        <Image HorizontalAlignment="Left" Height="197" Margin="1284,-16,0,0" VerticalAlignment="Top" Width="295" Source="/img/img3logo.png" Stretch="UniformToFill"/>
 
 
     </Grid>

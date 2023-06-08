@@ -8,26 +8,34 @@
       
       Title="GlavPage" VerticalAlignment="Center" HorizontalAlignment="Center">
 
-    <Grid HorizontalAlignment="Center"  VerticalAlignment="Center" Background="Black">
+    <Grid HorizontalAlignment="Center"  VerticalAlignment="Center">
+        <Grid.Background>
+            <ImageBrush ImageSource="/img/borpaw.png" Stretch="UniformToFill"/>
+        </Grid.Background>
         <WrapPanel Orientation="Horizontal" HorizontalAlignment="Left" Margin="1348,0,0,801"  >
             <StackPanel Orientation="Horizontal">
-                <TextBlock Text="Поиск: " Width="175" FontSize="28" TextAlignment="Right" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontStyle="Italic" FontWeight="Bold">
+                <TextBlock Text="Поиск: " Width="175" FontSize="48" TextAlignment="Right" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Comic Sans MS" FontStyle="Italic" FontWeight="Bold">
                     <TextBlock.Foreground>
                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF06B1F9" Offset="0"/>
-                            <GradientStop Color="#FF7AFF11" Offset="1"/>
-                            <GradientStop Color="#FF05B300" Offset="1"/>
+                            <GradientStop Color="#FF040404" Offset="0"/>
+                            <GradientStop Color="#FF00FF3E" Offset="1"/>
+                            <GradientStop Color="#FF0079FF"/>
+                            <GradientStop Color="#FF16FF03" Offset="0.524"/>
+                            <GradientStop Color="#FF0162FF"/>
                         </LinearGradientBrush>
                     </TextBlock.Foreground></TextBlock>
                 <TextBox Width="369" Name="TboxSerch" TextChanged="Tbox_Search" Height="54" FontSize="28" FontFamily="Comic Sans MS" FontWeight="Bold"></TextBox>
             </StackPanel>
         </WrapPanel>
 
-        <ListView x:Name="listview"  Height="863" d:ItemsSource="{d:SampleData ItemCount=5}" BorderBrush="#FF111211" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontFamily="Comic Sans MS" Margin="0,62,0,0" Width="auto" Background="Black" >
+        <ListView x:Name="listview"  Height="829" d:ItemsSource="{d:SampleData ItemCount=5}" BorderBrush="#FF111211" Grid.Row="0" VerticalAlignment="Top" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontFamily="Comic Sans MS" Margin="0,62,0,0" Width="auto" >
+            <ListView.Background>
+                <ImageBrush ImageSource="/img/lion1.jpg" Opacity="0.5"/>
+            </ListView.Background>
             <ListView.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF65FF00"/>
-                    <GradientStop Color="#FF0797F3" Offset="1"/>
+                    <GradientStop Color="#FF02E2FF" Offset="1"/>
+                    <GradientStop Color="#FF03FF2A" Offset="0"/>
                 </LinearGradientBrush>
             </ListView.Foreground>
             <ListView.View>
@@ -54,7 +62,7 @@
                                     <Image.Source>
                                         <Binding Path="PhotoProduct">
                                             <Binding.TargetNullValue>
-                                                <ImageSource>img/fon.png</ImageSource>
+                                                <ImageSource>img/imgNo.jpg</ImageSource>
                                             </Binding.TargetNullValue>
                                         </Binding>
                                     </Image.Source>
@@ -62,10 +70,10 @@
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    <GridViewColumn Header="df">
+                    <GridViewColumn Header="Редактировать">
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Button x:Name="BtnEdit" Click="Btn_Edit_Click" Width="auto" Height="auto" Content="Редактироват">
+                                <Button x:Name="BtnEdit" Click="Btn_Edit_Click" Width="auto" FontSize="24" Height="auto" Content="Редактироват">
                                     <Button.Background>
                                         <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                                             <GradientStop Color="Black"/>
@@ -81,7 +89,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Создать" Click="Btn_Create" HorizontalAlignment="Left" Margin="423,930,0,0" VerticalAlignment="Top" Height="79" Width="405" FontSize="36">
+        <Button Content="Создать" Click="Btn_Create" HorizontalAlignment="Left" Margin="425,900,0,0" VerticalAlignment="Top" Height="79" Width="405" FontSize="36">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -91,7 +99,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button x:Name="Btn_delet" Content="Удалить" Click="Btn_Del" HorizontalAlignment="Left" Margin="923,930,0,0" VerticalAlignment="Top" Height="79" Width="405" FontSize="36">
+        <Button x:Name="Btn_delet" Content="Удалить" Click="Btn_Del" HorizontalAlignment="Left" Margin="923,900,0,15" VerticalAlignment="Top" Height="79" Width="405" FontSize="36">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>

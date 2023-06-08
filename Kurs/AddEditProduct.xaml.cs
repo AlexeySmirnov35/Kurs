@@ -118,7 +118,7 @@ namespace Kurs
             try
             {
                 ZooBdEntities1.GetContext().SaveChanges();
-                MessageBox.Show("Save");
+                MessageBox.Show("Успешно сохранено");
                 NavigationService.GoBack();
             }
             catch (Exception ex)

@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Kurs"
       mc:Ignorable="d"
-      
+      Width="auto" 
       Title="AddEditProduct">
     <Grid RenderTransformOrigin="0.5,0.5" >
         <Grid.Background>
@@ -201,7 +201,15 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Image x:Name="ImageSerice" Width="300" Height="230" Margin="378,345,493,98"/>
+        <Image x:Name="ImageSerice" Width="300" Height="230" Margin="378,345,493,98">
+            <Image.Source>
+                <Binding Path="PhotoProduct">
+                    <Binding.TargetNullValue>
+                        <ImageSource>img/imgNO.jpg</ImageSource>
+                    </Binding.TargetNullValue>
+                </Binding>
+            </Image.Source>
+        </Image>
         <Button Content="Выбрать изображение" HorizontalAlignment="Left" Click="Image_Load"  Margin="380,589,0,0" FontSize="28" FontFamily="Comic Sans MS" HorizontalContentAlignment="Center" VerticalAlignment="Top" Height="59" Width="300">
             <Button.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -269,7 +277,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Image HorizontalAlignment="Left" Height="276" Margin="871,391,0,0" VerticalAlignment="Top" Width="267" Source="/img/img6logo.png" RenderTransformOrigin="0.5,0.5" Stretch="UniformToFill">
+        <Image HorizontalAlignment="Left" Height="276" Margin="913,401,0,0" VerticalAlignment="Top" Width="267" Source="/img/img3logo.png" RenderTransformOrigin="0.5,0.5" Stretch="UniformToFill">
             <Image.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>

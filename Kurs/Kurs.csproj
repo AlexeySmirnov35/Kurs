@@ -68,7 +68,6 @@
     <Compile Include="AddEditProduct.xaml.cs">
       <DependentUpon>AddEditProduct.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AppData\App.cs" />
     <Compile Include="AppData\AppConnect.cs" />
     <Compile Include="Category.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -240,6 +239,7 @@
     <Resource Include="img\img3logo.png" />
     <Resource Include="img\img6logo.png" />
     <Resource Include="img\img3brend.png" />
+    <Resource Include="img\imgNo.jpg" />
     <Content Include="Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Model1.edmx</DependentUpon>

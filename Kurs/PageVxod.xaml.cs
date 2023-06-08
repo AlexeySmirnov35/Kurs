@@ -65,8 +65,7 @@ namespace Kurs
                             break;
                         case 2:
                             MessageBox.Show("Hello ckient " + userObj.Name + "!", "uvced", MessageBoxButton.OK, MessageBoxImage.Information);
-                            AddProduct addProduct = new AddProduct();
-                            addProduct.Show();
+                            
                             break;
                         default: MessageBox.Show("Ne onraz", "uved", MessageBoxButton.OK, MessageBoxImage.Warning); break;
 
