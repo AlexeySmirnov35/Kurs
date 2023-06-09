@@ -33,7 +33,7 @@ namespace Kurs
 
             if (AppConnect.zooBd.Client.Count(x => x.Email == tbLogin.Text) > 0)
             {
-                MessageBox.Show("Такой уже есть", "uved", MessageBoxButton.OK, MessageBoxImage.Information); return;
+                MessageBox.Show("Такой пользователь уже есть", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information); return;
             }
             try
             {
@@ -49,7 +49,7 @@ namespace Kurs
                 };
                 AppConnect.zooBd.Client.Add(sotrrud);
                 AppConnect.zooBd.SaveChanges();
-                MessageBox.Show("Успешно");
+                MessageBox.Show("Успешно регистрация");
             }
             catch (Exception ex)
             {
@@ -91,7 +91,7 @@ namespace Kurs
             }
             else
             {
-                tbPass.Background = Brushes.Blue;
+                tbPass.Background = Brushes.Green;
                 BtnSave.IsEnabled = true;
 
 

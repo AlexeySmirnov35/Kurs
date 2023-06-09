@@ -28,22 +28,6 @@ namespace Kurs
         }
         private void Btn_Click(object sender, RoutedEventArgs e)
         {
-
-            /* if (tbLogin.Text.Length > 0) // проверяем введён ли логин     
-             {
-                 if (Ppasword.Password.Length > 0) // проверяем введён ли пароль         
-                 {             // ищем в базе данных пользователя с такими данными         
-                     DataTable dt_user = pageBD.Select("SELECT * FROM [dbo].[users] WHERE [login] = '" + tbLogin.Text + "' AND [password] = '" + Ppasword.Password + "'");
-                     if (dt_user.Rows.Count > 0) // если такая запись существует       
-                     {
-                         MessageBox.Show("Пользователь авторизовался"); // говорим, что авторизовался         
-                     }
-                     else MessageBox.Show("Пользователя не найден"); // выводим ошибку  
-                 }
-                 else MessageBox.Show("Введите пароль"); // выводим ошибку    
-             }
-             else MessageBox.Show("Введите логин"); // выводим ошибку */
-            //   NavigationService.Navigate(new Uri("Vxod.xaml",UriKind.Relative));
             try
             {
                 var sotrObj  = AppConnect.zooBd.Sotrudnik.FirstOrDefault(x => x.Email == tbLogin.Text && x.Password == Ppasword.Password);
@@ -63,31 +47,19 @@ namespace Kurs
                             ProductsClient productsClient=new ProductsClient();
                             productsClient.Show();
                             break;
-                        case 2:
-                            MessageBox.Show("Hello ckient " + userObj.Name + "!", "uvced", MessageBoxButton.OK, MessageBoxImage.Information);
-                            
-                            break;
-                        default: MessageBox.Show("Ne onraz", "uved", MessageBoxButton.OK, MessageBoxImage.Warning); break;
-
                     }
                 }
                 else
                 {
                     switch ( sotrObj.IdRole)
                     {
-                        case 1:
-                            MessageBox.Show("Hello admin" + sotrObj.Name + "!", "uvced", MessageBoxButton.OK, MessageBoxImage.Information);
-                            NavigationService.Navigate(new Uri("PageVxod.xaml", UriKind.Relative));
-                            break;
+                       
                         case 2:
                             MessageBox.Show("Приветсвуем Вас " + sotrObj.Name + "!", "Вы вошли как соотрудник", MessageBoxButton.OK, MessageBoxImage.Information);
                             MainProduct mainProduct = new MainProduct();
                             mainProduct.Show();
-                            
-                            //AddProduct addProduct = new AddProduct();
-                            //addProduct.Show();
                             break;
-                        default: MessageBox.Show("Ne onraz", "uved", MessageBoxButton.OK, MessageBoxImage.Warning); break;
+                        default: MessageBox.Show("Не обнужерен", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning); break;
 
                     }
 
@@ -95,7 +67,7 @@ namespace Kurs
             }
             catch (Exception Ex)
             {
-                MessageBox.Show("Dann net" + Ex.Message.ToString() + "ktit rab", "uved", MessageBoxButton.OK, MessageBoxImage.Warning);
+                MessageBox.Show("Нет данных" + Ex.Message.ToString() + "Критическая ошибка", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);
             }
 
         }

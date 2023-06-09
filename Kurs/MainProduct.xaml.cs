@@ -26,6 +26,7 @@ namespace Kurs
             InitializeComponent();
             AppConnect.zooBd = new ZooBdEntities1();
             FraimProd.Navigate(new GlavPage());
+            
         }
     }
 }

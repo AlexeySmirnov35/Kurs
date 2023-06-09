@@ -201,7 +201,7 @@
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
-        <Image x:Name="ImageSerice" Width="300" Height="230" Margin="378,345,493,98">
+        <Image x:Name="ImageV" Width="300" Height="230" Margin="378,345,493,98">
             <Image.Source>
                 <Binding Path="PhotoProduct">
                     <Binding.TargetNullValue>

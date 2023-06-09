@@ -72,5 +72,12 @@ namespace Kurs
         {
             NavigationService.Navigate(new PodrobnoPage((sender as Button).DataContext as Product));
         }
+
+        private void Btn_LogOut(object sender, RoutedEventArgs e)
+        {
+            ProductsClient productsClient = new ProductsClient();
+            productsClient.Close();
+            
+        }
     }
 }

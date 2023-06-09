@@ -58,7 +58,7 @@ namespace Kurs
             {
 
                 img = File.ReadAllBytes(fileOpen.FileName);
-                ImageSerice.Source = new ImageSourceConverter()
+                ImageV.Source = new ImageSourceConverter()
                    .ConvertFrom(img) as ImageSource;
             }
         }
