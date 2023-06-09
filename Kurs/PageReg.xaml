@@ -21,6 +21,7 @@
                 </ImageBrush.RelativeTransform>
             </ImageBrush>
         </Grid.Background>
+        <Image HorizontalAlignment="Left" Source="img/img3logo.png" Height="527" Margin="563,-36,0,0" VerticalAlignment="Top" Width="514" Stretch="UniformToFill"/>
         <Label Content="Фамилия" HorizontalAlignment="Left" Margin="15,88,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.197,-0.587" FontSize="28" Background="#00000000" FontFamily="Comic Sans MS" Height="57" Width="154">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
@@ -161,21 +162,20 @@
         <Label x:Name="labelemail" Content="" HorizontalAlignment="Left" Margin="703,42,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="22" Height="57" Width="234" FontWeight="Bold">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFFB0000"/>
-                    <GradientStop Color="#FFFBAD00" Offset="1"/>
+                    <GradientStop Color="#FF0050FB"/>
+                    <GradientStop Color="#FF72FB00" Offset="1"/>
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
         <Label x:Name="labelpass"  Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="703,97,0,0" VerticalAlignment="Top"  FontFamily="Comic Sans MS" FontSize="22" Height="128" Width="Auto" FontWeight="Bold" RenderTransformOrigin="0.5,0.5">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFFB0000"/>
-                    <GradientStop Color="#FFFBAD00" Offset="1"/>
+                    <GradientStop Color="#FF0050FB"/>
+                    <GradientStop Color="#FF72FB00" Offset="1"/>
                 </LinearGradientBrush>
             </Label.Foreground>
         </Label>
         <Label x:Name="labelpass_Copy" Content="" HorizontalAlignment="Left" Margin="724,245,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontSize="24"/>
-        <Image HorizontalAlignment="Left" Source="img/img3logo.png" Height="527" Margin="563,-36,0,0" VerticalAlignment="Top" Width="514" Stretch="UniformToFill"/>
         <Label Content="Выберите дату рождения" HorizontalAlignment="Left" Margin="10,281,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.197,-0.587" FontSize="28" FontFamily="Comic Sans MS" Height="57" Width="408">
             <Label.Foreground>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
