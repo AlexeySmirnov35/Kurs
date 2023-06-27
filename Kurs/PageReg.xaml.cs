@@ -33,7 +33,10 @@ namespace Kurs
 
             if (AppConnect.zooBd.Client.Count(x => x.Email == tbLogin.Text) > 0)
             {
-                MessageBox.Show("Такой пользователь уже есть", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information); return;
+                MessageBox.Show("Такой пользователь уже есть", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Information);
+                MainWindow mainWindow = new MainWindow();
+                mainWindow.Close();
+                return;
             }
             try
             {
@@ -131,6 +134,11 @@ namespace Kurs
                 tbLogin.BorderBrush = Brushes.Green;
 
             }
+        }
+
+        private void Btn_back(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("PageVxod.xaml", UriKind.Relative));
         }
     }
 }

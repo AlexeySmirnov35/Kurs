@@ -56,8 +56,11 @@ namespace Kurs
                        
                         case 2:
                             MessageBox.Show("Приветсвуем Вас " + sotrObj.Name + "!", "Вы вошли как соотрудник", MessageBoxButton.OK, MessageBoxImage.Information);
+                            
+                            this.Content = null;
                             MainProduct mainProduct = new MainProduct();
                             mainProduct.Show();
+                           
                             break;
                         default: MessageBox.Show("Не обнужерен", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning); break;
 
